@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        nav {
+            background-color: rgb(102, 102, 102);
+            padding: 3px;
+            box-shadow: 1px 1px 1px black;
+            /*
+            Deslocamento Horizontal ->
+            Deslocamento Vertical ->
+            Espalhamento ->
+            Sombra
+            */
+        }
+
+        nav > a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        nav > a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 3px 3px 6px black;
+            border-radius: 20px;
+            /*
+            1 parâmetro = todos os cantos iguais
+
+            2 parâmetros = top-left/bottom-right e top-right/bottom-left
+
+            top-left => top-right => bottom-right => bottom-left
+            */
+        }
+
+        #assuntos > p {
+            font-weight: bold;
+        }
+
+        article {
+            background-color: lightgray;
+            padding: 5px;
+        }
+
+        article > aside {
+            background-color: rgb(165, 165, 165);
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px;
+            margin: 0;
+        }
+
+        footer > p {
+            margin: 0;
+        }
+
+        #bola {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+            <p>Esportes Política Tecnologia</p>
+        </section>
+        <section id="noticias">
+            <article>
+                <h2>Notícia sobre o Brasil</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias facilis laborum corporis, accusamus iste sed, perferendis doloremque distinctio, aliquid inventore omnis! Quibusdam quam perspiciatis nihil? Quis culpa ratione perspiciatis minima!</p>
+                <aside>Artigo escrito por José da Silva</aside>
+            </article>
+            <article>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Marlin</p>
+    </footer>
+    <div id="bola">
+        
+    </div>
+</body>
+</html>
