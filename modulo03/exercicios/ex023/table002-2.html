@@ -30,7 +30,20 @@
             background-color: gray;
             color: white;
         }
+        /* :nth-child(value)
 
+            odd (ímpar)
+            even (par)
+            xn - começa no x
+        */
+
+        tbody > tr:nth-child(odd) {  /* 2n-1 */
+            background-color: white;
+        }
+
+        tbody > tr:nth-child(even) { /* 2n */
+            background-color: lightgray;
+        } 
         td.num, #tot {
             text-align: right;
         }
