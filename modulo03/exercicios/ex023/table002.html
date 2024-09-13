@@ -4,6 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        thead, tfoot {
+            background-color: gray;
+            color: white;
+        }
+
+        td.num, #tot {
+            text-align: right;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Seleciona todas as células com a classe 'num'
+            var habitantesElements = document.querySelectorAll('td.num');
+
+            // Cria um array vazio para armazenar os valores
+            var habitantes = [];
+
+            // Percorre todas as células selecionadas
+            habitantesElements.forEach(function(td) {
+                // Pega o texto da célula, retira os pontos e adiciona ao array
+                habitantes.push(td.textContent.replace(/\./g, ''));
+            });
+
+            // Exibe os valores no console
+            console.log(habitantes);
+
+            // soma todos os valores dentro da array
+            var total = habitantes.reduce(function(c, v) {
+                return c + parseInt(v)
+            }, 0)
+
+            console.log(total)
+            
+            // formata o número com pontos e adiciona na célula
+            document.getElementById('tot').textContent = total.toLocaleString('pt-BR')
+            document.getElementById('tot').style.fontWeight = "bold"
+        });
+    </script>
 </head>
 <body>
     <h1>Uso de tabelas grandes</h1>
@@ -17,5 +71,129 @@
         TFOOT 
             TR, TD, TH
     -->
+    <table>
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>População</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> 
+                <td>São Paulo</td>
+                <td class="num">45.919.049</td>
+            </tr>
+            <tr> 
+                <td>Minas Gerais</td>
+                <td class="num">21.487.451</td>
+            </tr>
+            <tr> 
+                <td>Rio de Janeiro</td>
+                <td class="num">17.366.189</td>
+            </tr>
+            <tr> 
+                <td>Bahia</td>
+                <td class="num">15.419.912</td>
+            </tr>
+            <tr> 
+                <td>Paraná</td>
+                <td class="num">11.804.558</td>
+            </tr>
+            <tr> 
+                <td>Rio Grande do Sul</td>
+                <td class="num">11.466.630</td>
+            </tr>
+            <tr> 
+                <td>Pernambuco</td>
+                <td class="num">9.858.504</td>
+            </tr>
+            <tr> 
+                <td>Ceará</td>
+                <td class="num">9.240.580</td>
+            </tr>
+            <tr> 
+                <td>Pará</td>
+                <td class="num">9.058.155</td>
+            </tr>
+            <tr> 
+                <td>Santa Catarina</td>
+                <td class="num">7.727.886</td>
+            </tr>
+            <tr> 
+                <td>Goiás</td>
+                <td class="num">7.460.182</td>
+            </tr>
+            <tr> 
+                <td>Maranhão</td>
+                <td class="num">7.238.369</td>
+            </tr>
+            <tr> 
+                <td>Amazonas</td>
+                <td class="num">4.393.050</td>
+            </tr>
+            <tr> 
+                <td>Espírito Santo</td>
+                <td class="num">4.185.503</td>
+            </tr>
+            <tr> 
+                <td>Paraíba</td>
+                <td class="num">4.059.905</td>
+            </tr>
+            <tr> 
+                <td>Rio Grande do Norte</td>
+                <td class="num">3.560.903</td>
+            </tr>
+            <tr> 
+                <td>Mato Grosso</td>
+                <td class="num">3.707.897</td>
+            </tr>
+            <tr> 
+                <td>Alagoas</td>
+                <td class="num">3.378.988</td>
+            </tr>
+            <tr> 
+                <td>Piauí</td>
+                <td class="num">3.289.290</td>
+            </tr>
+            <tr> 
+                <td>Distrito Federal</td>
+                <td class="num">3.166.533</td>
+            </tr>
+            <tr> 
+                <td>Mato Grosso do Sul</td>
+                <td class="num">2.839.188</td>
+            </tr>
+            <tr> 
+                <td>Sergipe</td>
+                <td class="num">2.353.789</td>
+            </tr>
+            <tr> 
+                <td>Rondônia</td>
+                <td class="num">1.815.278</td>
+            </tr>
+            <tr> 
+                <td>Tocantins</td>
+                <td class="num">1.607.363</td>
+            </tr>
+            <tr> 
+                <td>Acre</td>
+                <td class="num">906.876</td>
+            </tr>
+            <tr> 
+                <td>Amapá</td>
+                <td class="num">887.685</td>
+            </tr>
+            <tr> 
+                <td>Roraima</td>
+                <td class="num">652.713</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total de Habitantes</th>
+                <td id="tot"></td>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
